@@ -16,11 +16,26 @@
             android:layout_height="29dp"
             android:layout_marginTop="300dp"
             android:layout_marginBottom="32dp"
-            android:text="Player's Turn"
+            android:text="Your score is X"
             android:textAlignment="center"
+            android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/btnBack"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="217dp"
+            android:layout_height="29dp"
+            android:layout_marginTop="263dp"
+            android:layout_marginBottom="8dp"
+            android:text="GAME OVER"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/txtTurn"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="BACK"
+            android:text="BACK TO MAIN SCREEN"
             app:icon="?attr/actionModeCloseDrawable"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"

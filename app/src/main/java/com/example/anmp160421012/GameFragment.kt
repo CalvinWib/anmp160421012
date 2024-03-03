@@ -22,13 +22,13 @@ class GameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        if(arguments != null){
-            val name = GameFragmentArgs.fromBundle(requireArguments()).playerName
-            binding.txtTurn.text = "$name's turn"
+        if (arguments != null) {
+            val score = GameFragmentArgs.fromBundle(requireArguments()).score
+            binding.txtTurn.text = "Your score is $score"
         }
 
         binding.btnBack.setOnClickListener {
-            val action = GameFragmentDirections.actionMainFragment()
+            val action = GameFragmentDirections.actionMainFragment(score=0)
             Navigation.findNavController(it).navigate(action)
         }
     }
