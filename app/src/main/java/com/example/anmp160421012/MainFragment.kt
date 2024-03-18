@@ -48,5 +48,10 @@ class MainFragment : Fragment() {
                 Navigation.findNavController(it).navigate(action)
             }
         }
+
+        binding.btnOption.setOnClickListener(){
+            val action = MainFragmentDirections.actionOptionFragment()
+            Navigation.findNavController(it).navigate(action)
+        }
     }
 }
