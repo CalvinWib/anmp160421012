@@ -8,19 +8,20 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.studentapp.databinding.FragmentStudentListBinding
+import com.example.studentapp.R
+import com.example.studentapp.databinding.FragmentCarListBinding
 import com.example.studentapp.viewModel.ListViewModel
 
-class StudentListFragment : Fragment() {
+class CarListFragment : Fragment() {
     private lateinit var viewModel: ListViewModel
-    private lateinit var binding: FragmentStudentListBinding
-    private val studentListAdapter = StudentListAdapter(arrayListOf())
+    private lateinit var binding: FragmentCarListBinding
+    private val carListAdapter = CarListAdapter(arrayListOf())
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentStudentListBinding.inflate(inflater, container, false)
+        binding = FragmentCarListBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -30,7 +31,7 @@ class StudentListFragment : Fragment() {
         viewModel.refresh()
 
         binding.recyclerView.layoutManager = LinearLayoutManager(context)
-        binding.recyclerView.adapter = studentListAdapter
+        binding.recyclerView.adapter = carListAdapter
 
         binding.refreshLayout.setOnRefreshListener {
             viewModel.refresh()
@@ -44,8 +45,8 @@ class StudentListFragment : Fragment() {
     }
 
     fun observeViewModel(){
-        viewModel.studentListLD.observe(viewLifecycleOwner, Observer{
-            studentListAdapter.updateStudentList(it)
+        viewModel.carListLD.observe(viewLifecycleOwner, Observer{
+            carListAdapter.updateCarList(it)
         })
 
         viewModel.loadingLD.observe(viewLifecycleOwner, Observer{
