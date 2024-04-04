@@ -23,7 +23,7 @@ class StudentDetailFragment : Fragment() {
     private lateinit var viewModel: DetailViewModel
     private lateinit var binding: FragmentStudentDetailBinding
     private val f = StudentListAdapter(arrayListOf())
-
+    private val id = "";
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -36,7 +36,7 @@ class StudentDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(DetailViewModel::class.java)
-        viewModel.fetch()
+        viewModel.fetch(id)
 
         viewModel.studentLD.observe(viewLifecycleOwner, Observer { student1 ->
             binding.txtId.setText(student1.id)
