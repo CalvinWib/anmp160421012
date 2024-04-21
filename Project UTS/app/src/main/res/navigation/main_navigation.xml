@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/loginActivity">
+    app:startDestination="@id/homeFragment">
 
     <activity
         android:id="@+id/loginActivity"
@@ -34,15 +34,33 @@
         android:id="@+id/detailHobbyFragment"
         android:name="com.example.hobbyapp.view.DetailHobbyFragment"
         android:label="fragment_detail_hobby"
-        tools:layout="@layout/fragment_detail_hobby" />
+        tools:layout="@layout/fragment_detail_hobby" >
+        <action
+            android:id="@+id/action_detailHobbyFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.hobbyapp.view.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_historyReadFragment"
+            app:destination="@id/historyReadFragment" />
+    </fragment>
     <fragment
         android:id="@+id/historyReadFragment"
         android:name="com.example.hobbyapp.view.HistoryReadFragment"
         android:label="fragment_history_read"
-        tools:layout="@layout/fragment_history_read" />
+        tools:layout="@layout/fragment_history_read" >
+        <action
+            android:id="@+id/action_historyReadFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_historyReadFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
 </navigation>

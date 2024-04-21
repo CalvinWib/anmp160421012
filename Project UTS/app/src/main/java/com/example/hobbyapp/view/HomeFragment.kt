@@ -27,17 +27,22 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(ListViewModel::class.java)
-        hobbyListAdapter = HobbyListAdapter(ArrayList())
+        viewModel.refresh()
 
-        binding.recyclerView.layoutManager = LinearLayoutManager(context)
-        binding.recyclerView.adapter = hobbyListAdapter
+        with (binding) {
+            binding.recyclerView.layoutManager = LinearLayoutManager(context)
+            binding.recyclerView.adapter = hobbyListAdapter
 
-        binding.refreshLayout.setOnRefreshListener {
-            viewModel.refresh()
+            refreshLayout.setOnRefreshListener {
+                recyclerView.visibility = View.GONE
+                txtError.visibility = View.GONE
+                progressLoad.visibility = View.VISIBLE
+                viewModel.refresh()
+                refreshLayout.isRefreshing = false
+            }
         }
 
         observeViewModel()
-        viewModel.refresh()
     }
 
     fun observeViewModel(){

@@ -53,6 +53,6 @@ class HobbyListAdapter(val hobbyList: ArrayList<Hobby>)
         notifyDataSetChanged()
     }
 
-    inner class HobbyViewHolder(val binding: FragmentCardHobbyBinding) : RecyclerView.ViewHolder(binding.root)
+    class HobbyViewHolder(val binding: FragmentCardHobbyBinding) : RecyclerView.ViewHolder(binding.root)
 }
 
