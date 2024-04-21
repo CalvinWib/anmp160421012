@@ -12,7 +12,7 @@ import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 import java.lang.Exception
 
-class HobbyListAdapter(private val hobbyList: ArrayList<Hobby>)
+class HobbyListAdapter(val hobbyList: ArrayList<Hobby>)
     : RecyclerView.Adapter<HobbyListAdapter.HobbyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HobbyViewHolder {

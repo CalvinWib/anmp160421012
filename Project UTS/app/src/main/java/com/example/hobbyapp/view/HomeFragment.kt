@@ -12,9 +12,10 @@ import com.example.hobbyapp.databinding.FragmentHomeBinding
 import com.example.hobbyapp.viewModel.ListViewModel
 
 class HomeFragment : Fragment() {
+    val TAG = "volleyModel"
     private lateinit var viewModel: ListViewModel
     private lateinit var binding: FragmentHomeBinding
-    private lateinit var hobbyListAdapter: HobbyListAdapter
+    private var hobbyListAdapter: HobbyListAdapter = HobbyListAdapter(arrayListOf())
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
