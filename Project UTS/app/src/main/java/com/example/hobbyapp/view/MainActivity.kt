@@ -20,7 +20,6 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.navController
         binding.bottomNav.setupWithNavController(navController)
 
-        // Mendengarkan perubahan item BottomNavigationView
         binding.bottomNav.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.itemHome -> {
@@ -28,11 +27,11 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.itemReadingHistory -> {
-                    navController.navigate(R.id.action_homeFragment_to_historyReadFragment)
+                    navController.navigate(R.id.historyReadFragment)
                     true
                 }
                 R.id.itemProfile -> {
-                    navController.navigate(R.id.action_homeFragment_to_profileFragment)
+                    navController.navigate(R.id.profileFragment)
                     true
                 }
                 else -> false
