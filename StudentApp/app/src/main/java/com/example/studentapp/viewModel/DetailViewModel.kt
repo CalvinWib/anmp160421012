@@ -1,5 +1,6 @@
 package com.example.studentapp.viewModel
 
+import android.content.Context
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -20,7 +21,7 @@ class DetailViewModel:ViewModel() {
 
         val url = "http://adv.jitusolution.com/student.php?id=$id"
         
-        val requestQueue = Volley.newRequestQueue()
+//        val requestQueue = Volley.newRequestQueue()
 
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET, url, null,
@@ -37,7 +38,7 @@ class DetailViewModel:ViewModel() {
                 Log.e("FetchError", "Error fetching data: ${error.message}")
             })
 
-        requestQueue.add(jsonObjectRequest)
+//        requestQueue.add(jsonObjectRequest)
     }
 
 }

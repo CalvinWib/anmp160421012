@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/loginActivity">
+
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.hobbyapp.view.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.hobbyapp.view.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailHobbyFragment"
+            app:destination="@id/detailHobbyFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_historyReadFragment"
+            app:destination="@id/historyReadFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.hobbyapp.view.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/detailHobbyFragment"
+        android:name="com.example.hobbyapp.view.DetailHobbyFragment"
+        android:label="fragment_detail_hobby"
+        tools:layout="@layout/fragment_detail_hobby" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.hobbyapp.view.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/historyReadFragment"
+        android:name="com.example.hobbyapp.view.HistoryReadFragment"
+        android:label="fragment_history_read"
+        tools:layout="@layout/fragment_history_read" />
+</navigation>
