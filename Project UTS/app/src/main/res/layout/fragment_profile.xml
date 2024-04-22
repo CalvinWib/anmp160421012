@@ -7,17 +7,18 @@
     tools:context=".view.ProfileFragment">
 
     <EditText
-        android:id="@+id/txtNewNamaBelakang"
-        android:layout_width="341dp"
+        android:id="@+id/txtNamaBelakang"
+        android:layout_width="252dp"
         android:layout_height="63dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginStart="102dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="100dp"
         android:ems="10"
-        android:hint="New Nama Belakang"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/txtNewPass"
+        android:hint="Nama Belakang"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNamaDepan" />
 
     <Button
         android:id="@+id/btnChangePass"
@@ -31,31 +32,6 @@
         app:layout_constraintBottom_toTopOf="@+id/bottomNav"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <EditText
-        android:id="@+id/txtNewPass"
-        android:layout_width="343dp"
-        android:layout_height="71dp"
-        android:layout_marginBottom="48dp"
-        android:ems="10"
-        android:hint="New Password"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/btnChangePass"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/txtNewNamaDepan"
-        android:layout_width="341dp"
-        android:layout_height="72dp"
-        android:layout_marginBottom="20dp"
-        android:ems="10"
-        android:hint="New Nama Depan"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/txtNewNamaBelakang"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNav"
         android:layout_width="0dp"
@@ -65,4 +41,32 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav" />
+
+    <EditText
+        android:id="@+id/txtNamaDepan"
+        android:layout_width="242dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="145dp"
+        android:layout_marginEnd="104dp"
+        android:ems="10"
+        android:hint="Nama Depan"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtChangePassword"
+        android:layout_width="262dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="49dp"
+        android:layout_marginEnd="102dp"
+        android:ems="10"
+        android:hint="New Password"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNamaBelakang" />
 </androidx.constraintlayout.widget.ConstraintLayout>

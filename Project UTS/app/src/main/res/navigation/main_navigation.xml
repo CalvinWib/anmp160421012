@@ -47,9 +47,6 @@
         <action
             android:id="@+id/action_profileFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
-        <action
-            android:id="@+id/action_profileFragment_to_historyReadFragment"
-            app:destination="@id/historyReadFragment" />
     </fragment>
     <fragment
         android:id="@+id/historyReadFragment"
@@ -59,8 +56,10 @@
         <action
             android:id="@+id/action_historyReadFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
-        <action
-            android:id="@+id/action_historyReadFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
     </fragment>
+    <activity
+        android:id="@+id/registerActivity"
+        android:name="com.example.hobbyapp.view.RegisterActivity"
+        android:label="activity_register"
+        tools:layout="@layout/activity_register" />
 </navigation>
