@@ -1,85 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.StudentDetailFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+        <variable
+            name="std"
+            type="com.example.studentapp.model.Student"
+            />
+        <variable
+            name="listener"
+            type="com.example.studentapp.view.DetailClickListener"
+            />
+    </data>
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:context=".view.StudentDetailFragment">
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_launcher_foreground" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/txtId"
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:layout_marginTop="24dp"
-            android:ems="10"
-            android:hint="Student ID"
-            android:inputType="text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:tag="@{std.photoUrl}"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_launcher_foreground" />
 
-        <EditText
-            android:id="@+id/txtName"
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:layout_marginTop="24dp"
-            android:ems="10"
-            android:hint="Student Name"
-            android:inputType="text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtId" />
+            <EditText
+                android:id="@+id/txtId"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginTop="24dp"
+                android:ems="10"
+                android:hint="Student ID"
+                android:inputType="text"
+                android:text="@={std.id}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-        <EditText
-            android:id="@+id/txtBoD"
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:layout_marginTop="24dp"
-            android:ems="10"
-            android:hint="Birth of Date"
-            android:inputType="text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtName" />
+            <EditText
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginTop="24dp"
+                android:ems="10"
+                android:hint="Student Name"
+                android:inputType="text"
+                android:text="@={std.name}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtId" />
 
-        <EditText
-            android:id="@+id/txtPhone"
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:layout_marginTop="24dp"
-            android:ems="10"
-            android:hint="Phone"
-            android:inputType="text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtBoD" />
+            <EditText
+                android:id="@+id/txtBoD"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginTop="24dp"
+                android:ems="10"
+                android:hint="Birth of Date"
+                android:inputType="text"
+                android:text="@={std.dob}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtName" />
 
-        <Button
-            android:id="@+id/btnUpdate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="278dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="32dp"
-            android:text="UPDATE"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtPhone" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</FrameLayout>
+            <EditText
+                android:id="@+id/txtPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginTop="24dp"
+                android:ems="10"
+                android:hint="Phone"
+                android:inputType="text"
+                android:text="@={std.phone}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtBoD" />
+
+            <Button
+                android:id="@+id/btnUpdate"
+                android:onClick="@{listener::onDetailClick}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="278dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:text="UPDATE"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtPhone" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>
